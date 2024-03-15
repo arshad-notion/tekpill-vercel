@@ -3,7 +3,7 @@ import { uploadFile } from "@/lib/cloud";
 import { IArticle } from "@/types/IArticle";
 import { CompleteMultipartUploadCommandOutput } from "@aws-sdk/client-s3";
 import path from "path";
-import sharp from "sharp";
+// import sharp from "sharp";
 import { getURLFriendlyName } from "./fileHelper";
 
 export const getTextFromMarkDown = async (article: IArticle) => {
@@ -52,11 +52,11 @@ export const uploadArticle = async (
     for (let key in deviceImageArray) {
       const file = deviceImageArray[key];
 
-      const fileBuffer = await compressImage(file);
+      // const fileBuffer = await compressImage(file);
 
       const fileData: CompleteMultipartUploadCommandOutput = await uploadFile(
         `articles/${folder}/${key}`,
-        fileBuffer
+        file
       );
 
       imageData.push(fileData);
@@ -87,7 +87,7 @@ export const uploadArticle = async (
 };
 
 export const compressImage = async (file: Buffer, quality: number = 50) => {
-  return sharp(file).webp({ quality }).toBuffer();
+  // return sharp(file).webp({ quality }).toBuffer();
 };
 
 export const processArticle = (

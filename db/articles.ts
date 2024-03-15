@@ -58,7 +58,7 @@ export const getPopularArticles = async (
   return new Promise(async (resolve, reject) => {
     await dbConnect();
     try {
-      const monthPrevious = dayjs(Date.now()).subtract(1, "month").toDate();
+      const monthPrevious = dayjs(Date.now()).subtract(3, "month").toDate();
       const popularArticle = await Articles.find({
         postTime: { $gte: monthPrevious },
       })
@@ -79,7 +79,7 @@ export const getLatestArticle = async (
   return new Promise(async (resolve, reject) => {
     try {
       await dbConnect();
-      const monthPrevious = dayjs(Date.now()).subtract(1, "month").toDate();
+      const monthPrevious = dayjs(Date.now()).subtract(3, "month").toDate();
       const latestArticle = await Articles.find({
         postTime: { $gte: monthPrevious },
       })

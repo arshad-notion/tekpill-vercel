@@ -50,7 +50,7 @@ export const getPopularDevices = async (
   return new Promise(async (resolve, reject) => {
     const db = await dbConnect();
     try {
-      const monthPrevious = dayjs(Date.now()).subtract(1, "month").toDate();
+      const monthPrevious = dayjs(Date.now()).subtract(3, "month").toDate();
       const popularDevices = await Specs.find({
         postTime: { $gte: monthPrevious },
       })
@@ -72,7 +72,7 @@ export const getLatestDevices = async (
   return new Promise(async (resolve, reject) => {
     const db = await dbConnect();
     try {
-      const monthPrevious = dayjs(Date.now()).subtract(1, "month").toDate();
+      const monthPrevious = dayjs(Date.now()).subtract(3, "month").toDate();
       const popularDevices = await Specs.find({
         postTime: { $gte: monthPrevious },
       })
