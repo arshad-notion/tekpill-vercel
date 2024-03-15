@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Anek+Kannada:wght@100;400&display=swap");
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -24,10 +25,80 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  height: 100%;
+  background-color: #eeeff4;
+  font-family: "Anek Kannada", sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* h1{font-size: 2.125rem; font-weight: 700;}
+
+h2{font-size: 1.875rem; font-weight: 700;}
+h3{font-size: 1.5rem; font-weight: 700;} */
+
+.active {
+  color: #1470fb;
+  border-bottom: 4px solid #1470fb;
+  padding-bottom: 1rem;
+  font-weight: 600;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+div.news {
+  align-items: center;
+}
+div.news p {
+  font-size: 1rem !important;
+  line-height: 2;
+  color: #242424;
+  margin-bottom: 2rem;
+}
+div.news h1 {
+  font-size: 2.2rem;
+  padding: 0.6rem 0rem;
+  color: #242424;
+}
+div.news h2 {
+  font-size: 1.8rem;
+  padding: 1.5rem 0rem 0.6rem 0rem;
+  color: #242424;
+}
+div.news h3 {
+  font-size: 1.3rem;
+  padding: 0.6rem 0rem;
+  color: #242424;
+}
+div.news p img {
+  width: 100%;
+  display: block;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.6rem 0rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
 }
